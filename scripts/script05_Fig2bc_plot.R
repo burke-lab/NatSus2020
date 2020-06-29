@@ -10,9 +10,9 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
 
 #load coefficients for plotting. If script 04 was run load that output. otherwise load pre-processed data. 
-if(file.exists("data/intermediate_outputs/permutation_test_coefs_dust_new.RData")){
-  load("data/intermediate_outputs/permutation_test_coefs_dust_new.RData")
-  } else{load("data/intermediate_outputs/permutation_test_coefs_dust.RData")}
+if(file.exists("data/figure_data/fig2_permutation_test_coefs_dust_new.RData")){
+  load("data/figure_data/fig2_permutation_test_coefs_dust_new.RData")
+  } else{load("data/figure_data/fig2_permutation_test_coefs_dust.RData")}
 
 
 
@@ -36,9 +36,9 @@ dev.off()
 
 
 #load coefficients for plotting. If script 04 was run load that output. otherwise load pre-processed data. 
-if(file.exists("data/intermediate_outputs/permutation_test_coefs_rain_new.RData")){
-  load("data/intermediate_outputs/permutation_test_coefs_rain_new.RData")
-} else{load("data/intermediate_outputs/permutation_test_coefs_rain.RData")}
+if(file.exists("data/figure_data/fig2_permutation_test_coefs_rain_new.RData")){
+  load("data/figure_data/fig2_permutation_test_coefs_rain_new.RData")
+} else{load("data/figure_data/fig2_permutation_test_coefs_rain.RData")}
 
 pdf("figures/raw/Fig3_c_raw.pdf", width = 6, height = 3)
 

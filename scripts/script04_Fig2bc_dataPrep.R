@@ -65,7 +65,7 @@ for(i in 1:B){
 }
 
 #save coefficients
-save(beta_dust_share, beta_dust_timing, file = "data/intermediate_outputs/permutation_test_coefs_dust_new.RData")
+save(beta_dust_share, beta_dust_timing, file = "data/figure_data/fig2_permutation_test_coefs_dust_new.RData")
 
 
 
@@ -124,5 +124,5 @@ for(i in 1:B){
 }
 
 #save coefficients
-save(beta_dust_share_rain, beta_rain_timing, file = "data/intermediate_outputs/permutation_test_coefs_rain_new.RData")
+save(beta_dust_share_rain, beta_rain_timing, file = "data/figure_data/fig2_permutation_test_coefs_rain_new.RData")
 
