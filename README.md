@@ -41,35 +41,37 @@ Script 02 generates figure 1
 
 Script 03 generates figure 2 panel a
 
-Script 04 generates figure 2 panels b and c (slow to run, >15 min if you run 1,000 iterations)
+Script 04 processes data for figure 2 panels b and c (slow to run, >15 min if you run 1,000 iterations)
 
-Script 05 generates figure 3 panel a
+Script 05 generates figure 2 panels b and c 
 
-Script 06 generates figure 3 panel b
+Script 06 generates figure 3 panel a
 
-Script 07 processes data for figure 4 (script 00 must be run first. slow to run, >15 min if you run 1,000 iterations)
+Script 07 generates figure 3 panel b
 
-Script 08 generates figure 4
+Script 08 processes data for figure 4 (script 00 must be run first. slow to run, >15 min if you run 1,000 iterations)
 
-Script 09 processes data for figure 5 (script 00 must be run first)
+Script 09 generates figure 4
 
-Script 10 plots figure 5
+Script 10 processes data for figure 5 (script 00 must be run first. slow to run, >5 min if you run 1,000 iterations)
 
-Script 11 plots figure ED1
+Script 11 plots figure 5 (> 1 min if you run 1,000 iterations)
 
-Script 12 processes the data for figure ED2 (script 00 must be run first)
+Script 12 plots figure ED1
 
-Script 13 generates figure ED2
+Script 13 processes the data for figure ED2 (script 00 must be run first)
 
-Script 14 generates figure ED3
+Script 14 generates figure ED2
 
-Script 15 generates figure ED4
+Script 15 generates figure ED3
 
-Script 16 generates figure ED5
+Script 16 generates figure ED4
 
-Script 17 has the calculations referenced in the text of the paper
+Script 17 generates figure ED5
 
-Script 18 processes the exposure datas for all DHS locations. Note the processed output cannot be merged with the birth data (see above for details). This script is a work in progress.
+Script 18 has the calculations referenced in the text of the paper
+
+Script 19 processes the exposure datas for all DHS locations. Note the processed output cannot be merged with the birth data (see above for details). This script is a work in progress.
 
 
 
