@@ -1,5 +1,5 @@
-source("scripts/0_loadPackages.R")
-source("scripts/0_loadFunctions.R")
+source("scripts/loadPackages.R")
+source("scripts/loadFunctions.R")
 
 data <- read_rds("data/inputs/analysis_data.rds")
 africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")

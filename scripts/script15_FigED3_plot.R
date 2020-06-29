@@ -1,5 +1,5 @@
-source("scripts/0_loadFunctions.R")
-source("scripts/0_loadPackages.R")
+source("scripts/loadFunctions.R")
+source("scripts/loadPackages.R")
 
 #aeronet-
 #citation:    Dubovik, O., A. Sinyuk, T. Lapyonok, B. N. Holben, M. Mishchenko, P. Yang, T. F. Eck, 
