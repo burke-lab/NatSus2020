@@ -41,7 +41,7 @@ Script 02 generates figure 1
 
 Script 03 generates figure 2 panel a
 
-Script 04 generates figure 2 panels b and c
+Script 04 generates figure 2 panels b and c (slow to run, >15 min if you run 1,000 iterations)
 
 Script 05 generates figure 3 panel a
 
