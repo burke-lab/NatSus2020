@@ -59,7 +59,7 @@ Script 11 plots figure 5 (> 1 min if you run 1,000 iterations)
 
 Script 12 plots figure ED1
 
-Script 13 processes the data for figure ED2 (script 00 must be run first)
+Script 13 processes the data for figure ED2 (script 00 must be run first. slow to run, >10 min)
 
 Script 14 generates figure ED2
 
@@ -69,9 +69,7 @@ Script 16 generates figure ED4
 
 Script 17 generates figure ED5
 
-Script 18 has the calculations referenced in the text of the paper
-
-Script 19 processes the exposure datas for all DHS locations. Note the processed output cannot be merged with the birth data (see above for details). This script is a work in progress.
+Script 18 processes the exposure datas for all DHS locations. Note the processed output cannot be merged with the birth data (see above for details). This script is a work in progress.
 
 
 
