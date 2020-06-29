@@ -61,9 +61,6 @@ for(i in 1:1000){
 } 
 y <- as.data.frame(y)   
 vals <- y$dollar_per_averted_YLL
-c1 <- quantile(vals, .01)
-c2 <- quantile(vals, .99)
-#vals <- vals[vals >c1 & vals < c2]  #keep inner 95% of estimates
 
     
       pdf("figures/raw/Fig5a_raw.pdf", width = 6, height = 5)
@@ -79,8 +76,11 @@ c2 <- quantile(vals, .99)
 
 
   
-  #[panel b]  load uncertainties calculated in 7.1runRegressionsFig5.R for panel b
-  uncertainties <- read_rds("data/figure_data/fig5_sampled_uncertainty.rds")
+  #[panel b]  load uncertainties calculated in script 10 (or else pre-processed data) for panel b
+  
+      if(file.exists("data/figure_data/fig5_sampled_uncertainty_new.rds")){
+        uncertainties <- read_rds("data/figure_data/fig5_sampled_uncertainty_new.rds")
+        }else{uncertainties <- read_rds("data/figure_data/fig5_sampled_uncertainty.rds")}
 
           
           res <- data.frame(min = 
@@ -93,8 +93,8 @@ c2 <- quantile(vals, .99)
           res$c1 <- apply(res, 1, function(x){min(c(x["min"], x["max"]))})
           res$c2 <- apply(res, 1, function(x){max(c(x["min"], x["max"]))})
           
-          names(unct)<-par_uncrt$parameter
-          res <- data.frame(par = names(unct), min = res$c1, max = res$c2)
+          names(uncertainties)<-par_uncrt$parameter
+          res <- data.frame(par = names(uncertainties), min = res$c1, max = res$c2)
           res$diff <- res$max-res$min
           res <- arrange(res, diff)
 
