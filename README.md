@@ -33,7 +33,7 @@ Users can manage replication through the R project "NatSus2020_replication.Rproj
 
 * **Scripts**
 
-Script 00 downloads the PM2.5, DAOD, and CHIRPs rainfall data used in the analysis. THIS STEP IS OPTIONAL. R scripts have been divided into processing scripts and scripts that generate plots. Pre-processed versions of these data are inclueed in analysis_data.rds, or in files in the directory data/figure_data, which are called by the scripts that generate the figures. Therefore if you only want to generate the figures from pre-processed data then you can skip this step. If you want to replicate data processing then this step is required.
+Script 00 downloads the PM2.5, DAOD, and CHIRPs rainfall data used in the analysis. THIS STEP IS OPTIONAL. R scripts have been divided into processing scripts and scripts that generate figures. Pre-processed versions of these data are inclueed in analysis_data.rds, or in files in the directory data/figure_data, which are called by the scripts that generate the figures. Therefore if you only want to generate the results and figures from pre-processed data then you can skip this step. If you want to replicate data processing then this step is required.
 
 Script 01 processes the data for figure 1 (script 00 must be run first)
 
