@@ -1,1 +1,1 @@
-Data to be used in generated select figures.
+Pre-processed data used in generating figures that draw on data not in the main data set.
