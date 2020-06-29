@@ -17,7 +17,7 @@ If you find meaningful errors in the code or have questions or suggestions, plea
 * **NatSus2020_replication.Rproj**: organizes the replication materials into an RStudio Project.
 
 ## Instructions
-The repository is ~270Mb (and >2Gb if you download all the data with script 00)
+The repository is ~360Mb (and >2Gb if you download all the raw data using script 00)
 
 Users can manage replication through the R project "NatSus2020_replication.Rproj". Alternatively users can set working directory to NatSus2020 and run scripts independently.
 

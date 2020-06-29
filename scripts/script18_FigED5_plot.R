@@ -291,7 +291,7 @@ iv_results$xleft <- 100*10*(iv_results$coefficients + qnorm(0.025)*iv_results$se
 iv_results$xright <- 100*10*(iv_results$coefficients + qnorm(0.975)*iv_results$se)/iv_results$mean
 iv_results$x_bar <- 100*10*(iv_results$coefficients)/iv_results$mean
 iv_results$col <- 'black'
-iv_results$col[iv_results$type=="west"] <- 'white'    
+iv_results$col[iv_results$region=="west"] <- 'white'    
 
 
 
