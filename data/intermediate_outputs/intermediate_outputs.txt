@@ -1,0 +1,1 @@
+Any data processed in the scripts to be used later by a different script is written to hear.
