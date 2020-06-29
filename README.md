@@ -63,11 +63,13 @@ Script 13 processes the data for figure ED2 (script 00 must be run first. slow t
 
 Script 14 generates figure ED2
 
-Script 15 generates figure ED3
+Script 15 processes the data for figure ED3 (script 00 must be run first)
 
-Script 16 generates figure ED4
+Script 16 generates figure ED3
 
-Script 17 generates figure ED5
+Script 17 generates figure ED4
+
+Script 18 generates figure ED5
 
 Script 18 processes the exposure datas for all DHS locations. Note the processed output cannot be merged with the birth data (see above for details). This script is a work in progress.
 
