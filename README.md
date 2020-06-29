@@ -71,7 +71,7 @@ Script 17 generates figure ED4
 
 Script 18 generates figure ED5
 
-Script 18 processes the exposure datas for all DHS locations. Note the processed output cannot be merged with the birth data (see above for details). This script is a work in progress.
+Script 19 processes the exposure datas for all DHS locations. Note the processed output cannot be merged with the birth data (see above for details). This script is a work in progress.
 
 
 
