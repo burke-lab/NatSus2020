@@ -2,7 +2,7 @@ source("scripts/0_loadPackages.R")
 source("scripts/0_loadFunctions.R")
 
 #see QuasiExperimentEstimates.xlsx for more on source of estimates and details on unit conversion calculations
-estimates <- read_csv("data/figure_data/QuasiExperimentEstimates.csv")%>% arrange(-estimate) 
+estimates <- read_csv("data/figure_data/fig3_data.csv")%>% arrange(-estimate) 
 estimates <- rbind(data.frame(citation = "This Study",location = "Sub-Saharan Africa",estimate= 24,lowerbound=10,upperbound = 35 ), estimates)
 
 	
