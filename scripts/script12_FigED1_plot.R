@@ -10,6 +10,10 @@ dhsLatLon <- read_csv("data/inputs/dhs/dhs_locations.csv")
 bodLatLon <- read_csv("data/inputs/spatial_boundaries/BodeleLocation.csv")
 
 
+#africa shape
+africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
+
+
 
 
 
@@ -30,11 +34,13 @@ tdb <- dhsLatLon %>% group_by(dist_bin) %>%
 
 
 
-
+#set countries to gray if they're not in our sample and white if they are
 col <- rep('gray70', nrow(africa))
+#cote d'ivoire spelled differently in two sources to manually change to white
 col[africa@data$NAME_0 %in% unique(data$country)]<-"white"
 col[africa@data$NAME_0 %in% "Côte d'Ivoire"]<-"white"
 
+#set point colors
 col1 <- rep('coral', nrow(dhsLatLon))
 col1[dhsLatLon$region==0]<-"blue"
 
