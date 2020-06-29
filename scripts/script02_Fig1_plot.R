@@ -1,5 +1,5 @@
-source("scripts/0_loadPackages.R")
-source("scripts/0_loadFunctions.R")
+source("scripts/loadPackages.R")
+source("scripts/loadFunctions.R")
 
       ##### Load Data #####
       load("data/intermediate_outputs/fig1_data.RData") #pm average data for panels (a) and (b) [pm_ave and pm_dust_ave and pm_dust_share_ave and africa (shapefile) and dsa (plotting bodele)]

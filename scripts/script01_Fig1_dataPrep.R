@@ -73,7 +73,7 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
     
         #identify Bodele depression dust
             bodMask <- raster(pm_dust_ave)
-            bodLatLon <- read_csv("data/inputs/BodeleLocation.csv")
+            bodLatLon <- read_csv("data/inputs/spatial_boundaries/BodeleLocation.csv")
             bodMask[]<-0
             bodMask[cellFromXY(bodMask, as.matrix(bodLatLon[,1:2]))]<-1
             bod_cells <- data.frame(cell = 1:ncell(bodMask), bodDummy = bodMask[]) %>% filter(bodDummy==1)

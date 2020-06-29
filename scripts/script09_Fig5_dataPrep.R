@@ -1,5 +1,5 @@
-source("scripts/0_loadFunctions.R")
-source("scripts/0_loadPackages.R")
+source("scripts/loadFunctions.R")
+source("scripts/loadPackages.R")
 
 dat <- read_csv("data/inputs/exotic_proposal_parameters/parameters.csv") %>% filter(parameter %in% c("Unit cost for Borewell", "Unit cost for PV pumping system","Unit cost for pivot distribution system")==F)
 

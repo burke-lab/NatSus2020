@@ -1,5 +1,5 @@
-source("scripts/0_loadFunctions.R")
-source("scripts/0_loadPackages.R")
+source("scripts/loadFunctions.R")
+source("scripts/loadPackages.R")
 
 data <- read_rds("data/inputs/analysis_data.rds")
 ################################################################################

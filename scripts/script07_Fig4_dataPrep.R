@@ -1,5 +1,5 @@
-source("scripts/0_loadFunctions.R")
-source("scripts/0_loadPackages.R")
+source("scripts/loadFunctions.R")
+source("scripts/loadPackages.R")
 
   data_west <- read_rds("data/inputs/analysis_data.rds") %>% filter(region==1)                                                      
   celldata <- read_rds("data/figure_data/fig4_cell_regression_data.rds")                                 
