@@ -1,11 +1,11 @@
-source("scripts/0_loadPackages.R")
-source("scripts/0_loadFunctions.R")
+source("scripts/loadPackages.R")
+source("scripts/loadFunctions.R")
 africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
 
 ### [1] Load data ###
 
-          ##### Bring in pm.nodust.5 data
+          ##### Bring in pm2.5 data with and without dust
           dat.files <- list.files("data/inputs/pm25/", pattern = "\\.nc$")	#get file names 
           
           #separate total pm.nodust.5 from version with dust and sea salt removed			
@@ -41,7 +41,7 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
           pm[not.africa.cells]<-NA
           pm_dust[not.africa.cells]<-NA
           
-          save(pm, pm_dust, file = "data/intermediate_outputs/pm_brick_data.RData")
+          save(pm, pm_dust, file = "data/intermediate_outputs/pm_brick_data.RData")#will replace pre-processed data
 
           
 ### [2] calculate share of total pm2.5 from dust ###          
@@ -135,5 +135,5 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
 
 ################################# write out all of the data objects used to construct figure 1 #################################
-save(pm_dust_ave, pm_ave, pm_dust_share_ave, africa,bod_dat, file = "data/intermediate_outputs/fig1_data.RData")    
+save(pm_dust_ave, pm_ave, pm_dust_share_ave, africa,bod_dat, file = "data/intermediate_outputs/fig1_data.RData") #replaces pre-processed data file    
 ################################################################################################################################
