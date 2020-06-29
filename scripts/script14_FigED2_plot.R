@@ -1,38 +1,22 @@
+source("scripts/loadPackages.R")
+source("scripts/loadFunctions.R")
 
-####################### spatial panels
+africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
-
-#  dts gives date info for layers
-#   dust is raster brick   
-grid[] <- 1:ncell(grid)  
-
-africa_cells <- raster::extract(grid, africa, small = T) %>% unlist() %>% unique() %>% sort()
-all_cells <- 1:ncell(grid)
-non_africa_cells <- all_cells[all_cells %in% africa_cells == F]
-dust_backup <- dust
-
-dust[non_africa_cells] <- NA
-dust[dust>2.5]<-2.5 #define upper bound
-dust[dust<0]<-0 #define lower bound
-dust[1]<-3  #set a max (for convenient raster color scale plotting)
-dust[2]<-0  #set a min (for convenient raster color scale plotting)
-            #now have range 0-3 for color scale
+####################### spatial panel a ############
 
 
-
-
-
+dust <- brick("data/figure_data/figED2_dust_data.nc")
 pal1 <- colorRampPalette(colors = add.alpha(c("#404096","#63AD99","#BEBC48","#E66B33","#D92120"), 0.5))
 
-start_pt <- which(dts$year == 2009 & dts$month == 2 & dts$dom == 10)
 
 
 pdf("figures/raw/FigED2a_raw.pdf", width = 3, height = 4)
 par(mfrow = c(3,2))
-for(tp in (start_pt):(start_pt+5)){
+for(tp in 1:(dim(dust)[3])){
   par(mar = c(0,0,0,0))
   plot(africa, border = NA)
-  plot(dust[[start_pt]], add = T, legend = F, col = pal1(256))
+  plot(dust[[tp]], add = T, legend = F, col = pal1(256))
   plot(africa, add=T, lwd = 0.1)
   rect(xleft = -40, xright = -19, ybottom = -40, ytop = 40, border = NA, col ='white')
   rect(xleft = -40, xright = 0, ybottom = -40, ytop = 0, border = NA, col ='white')
@@ -40,7 +24,7 @@ for(tp in (start_pt):(start_pt+5)){
   rect(xleft = -40, xright = 60, ybottom = -60, ytop = -40, border = NA, col ='white')
   rect(xleft = 52, xright = 80, ybottom = -60, ytop = 40, border = NA, col ='white')
   
-  mtext(side = 3, text = paste(simpleCap(as.character(dts[tp,"month_name"]))," ",as.character(dts[tp,"dom"]),", ", as.character(dts[tp,"year"]), sep = "" ) ,cex=0.25,line = -0.5) 
+  mtext(side = 3, text = names(dust)[i] ,cex=0.25,line = -0.5) 
 }
 
 
@@ -51,6 +35,9 @@ dev.off()
 
 
 ######### TEMPORAL FIGURE ############
+grid <- raster(dust[[1]])
+
+load("data/figure_data/figED2_panel_b_data.RData")
 
 
 pdf("figures/raw/FigED2b_insert_raw.pdf",width = 6, height = 3.5)       

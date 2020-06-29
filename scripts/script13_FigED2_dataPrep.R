@@ -1,10 +1,8 @@
 source("scripts/loadPackages.R")
 source("scripts/loadFunctions.R")
 
-data <- read_rds("data/inputs/analysis_data.rds")
 africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
- 
 
 ################## Setup some useful info and functions     ################# 
 
@@ -133,18 +131,6 @@ data_full$nrb <- get_series(rbind(c(36.828159, -1.263360),c(36.828159, -0.263360
 dkr_cells <- get_cells(-15.874903, 14.875502)
 data_full$dkr <- get_series(dkr_cells)
 
-djo_cells <- get_cells(1.669671, 9.697895)
-data_full$djo <- get_series(djo_cells)
-
-mtn_cells <- get_cells(-12.460984, 18.73)
-data_full$mtn <- get_series(mtn_cells)
-
-kms_cells <- get_cells(-1.617377, 6.642829)
-data_full$kms <- get_series(kms_cells)
-
-lagos_cells <- get_cells(3.348516, 6.524115)
-data_full$lagos <- get_series(lagos_cells)
-
 
 
 
@@ -169,6 +155,43 @@ for(i in 1:length(cors)){
   
   cors[[i]]<-get_cor(as.numeric(data_full2[,nms1[i]]))
 }
+
+
+save(cors, 
+     bod_cells, nmy_cells, kno_cells, nrb_cells, bfs_cells, bmk_cells,dkr_cells,
+     file = "data/figure_data/figED2_panel_b_data.RData")
+
+
+
+
+############################################
+## prepare spatial data for panel a
+
+#  dts gives date info for layers
+#   dust is raster brick   
+grid[] <- 1:ncell(grid)  
+
+africa_cells <- raster::extract(grid, africa, small = T) %>% unlist() %>% unique() %>% sort()
+all_cells <- 1:ncell(grid)
+non_africa_cells <- all_cells[all_cells %in% africa_cells == F]
+dust_backup <- dust
+
+dust[non_africa_cells] <- NA
+dust[dust>2.5]<-2.5 #define upper bound
+dust[dust<0]<-0 #define lower bound
+dust[1]<-3  #set a max (for convenient raster color scale plotting)
+dust[2]<-0  #set a min (for convenient raster color scale plotting)
+#now have range 0-3 for color scale
+
+
+start_pt <- which(dts$year == 2009 & dts$month == 2 & dts$dom == 10)
+dust_plot <- dust[[(start_pt):(start_pt+5)]]
+dates <- dts[(start_pt):(start_pt+5),]
+names(dust_plot) <- paste(simpleCap(as.character(dates[,"month_name"]))," ",as.character(dates[,"dom"]),", ", as.character(dates[,"year"]), sep = "" )
+
+
+writeRaster(dust_plot, filename = "data/figure_data/figED2_dust_data.nc", format = "CDF", overwrite= T)
+
 
 
 
