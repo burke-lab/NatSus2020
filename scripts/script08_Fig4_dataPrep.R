@@ -19,7 +19,7 @@ eqn_imr <- make_equation(
                       controls = "rain_post +rain_pre + tmp_pre + tmp_post + child_female + child_birth_order + child_multi_birth + poly(mother_age_at_birth, 2, raw=T)  + hh_nightlights ",
                       fe = "fe_cluster + fe_country_month + fe_year",
                       depvar = "child_die_age1",
-                      cluster_var = "", # no need to cluster while bootstrapping since we're not using estimated errors
+                      cluster_var = "0", # no need to cluster while bootstrapping since we're not using estimated errors
                       iv = "(pm25_post ~   instrument_rain )"
                         )
 
