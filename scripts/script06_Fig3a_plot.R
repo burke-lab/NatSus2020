@@ -124,7 +124,7 @@ ci <-  formatC(round(iv_results$xmid,2),digits=2,format="f")%&%" ("%&%formatC(ro
 
 
 
-pdf(file="figures/raw/Fig_3a_raw.pdf",width=7,height=4,useDingbats = F)
+pdf(file="figures/raw/Fig3a_raw.pdf",width=7,height=4,useDingbats = F)
 
 par(mgp=c(2,0.8,0),mar=c(5,2,2,2),lend=1)
 
