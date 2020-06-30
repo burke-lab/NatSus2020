@@ -53,7 +53,7 @@ Script 08 processes data for figure 4 (script 00 must be run first. slow, >30 mi
 
 Script 09 generates figure 4
 
-Script 10 processes data for figure 5 (script 00 must be run first. slow, >5 min if you run 1,000 iterations)
+Script 10 processes data for figure 5 (script 00 must be run first. estiamted runtime >5 min if you run 1,000 iterations)
 
 Script 11 plots figure 5 (> 1 min if you run 1,000 iterations)
 
