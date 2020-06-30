@@ -16,7 +16,7 @@ if(file.exists("data/figure_data/fig2_permutation_test_coefs_dust_new.RData")){
 
 
 
-pdf("figures/raw/Fig3_b_raw.pdf", width = 6, height = 3)
+pdf("figures/raw/Fig2b_raw.pdf", width = 6, height = 3)
 
 hist(beta_dust_timing,axes=F, xlab = "",ylab = "", main = "", breaks=15, ylim = c(0,500), col = add.alpha('gray90', 0.5), 
      border = add.alpha('gray20', 0.5), xlim = c(-0.015, 0.015))
@@ -40,7 +40,7 @@ if(file.exists("data/figure_data/fig2_permutation_test_coefs_rain_new.RData")){
   load("data/figure_data/fig2_permutation_test_coefs_rain_new.RData")
 } else{load("data/figure_data/fig2_permutation_test_coefs_rain.RData")}
 
-pdf("figures/raw/Fig3_c_raw.pdf", width = 6, height = 3)
+pdf("figures/raw/Fig2c_raw.pdf", width = 6, height = 3)
 
 hist(beta_dust_timing,axes=F, xlab = "",ylab = "", main = "", breaks=15, ylim = c(0,600), col = add.alpha('gray90', 0.5), 
      border = add.alpha('gray20', 0.5), xlim = c(-0.05, 0.05))

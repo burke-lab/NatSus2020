@@ -63,7 +63,7 @@ ci <-  paste(round(fs_results$coefficient,2)," (",round(fs_results$xleft,2), ","
 
 
 
-pdf(file="figures/raw/Fig2_a_raw.pdf",width=7,height=3.5,useDingbats = F)
+pdf(file="figures/raw/Fig2a_raw.pdf",width=7,height=3.5,useDingbats = F)
 
 par(mgp=c(2,0.8,0),mar=c(5,4,4,3),lend=1)
 
