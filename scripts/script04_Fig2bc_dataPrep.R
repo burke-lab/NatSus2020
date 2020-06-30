@@ -17,7 +17,7 @@ B <- 1000
 beta_dust_share <- beta_dust_timing <- rep(NA, B)
 
 for(i in 1:B){
-  
+
   #randomize DHS cluster dust shares
   #randomly re-assign dust shares across locations in our data  for the spatial veriation in the instrument
   data$dust_share_perm  <- data$dust_share[order(runif(n = nrow(data)))]
@@ -60,7 +60,7 @@ for(i in 1:B){
   
   #monitor progress
   if(i/10 == round(i/10)){print(i)}
-  
+
 }
 
 #save coefficients

@@ -67,8 +67,8 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
             dhs_loc$dust_share_i <- pm_dust_share_ave[dhs_loc$pm_cell]
             
         #fill in missings (not used for analysis just for visualization in fig 1)
-            dhs_loc$dust_share_i[is.na(data$dust_share_i)] <- pm_dust_share_ave[dhs_loc$pm_cell+1][is.na(data$dust_share_i)] #move one cell over
-            dhs_loc$dust_share_i[is.na(data$dust_share_i)] <- pm_dust_share_ave[dhs_loc$pm_cell-(845)][is.na(data$dust_share_i)] #move one cell down
+            dhs_loc$dust_share_i[is.na(dhs_loc$dust_share_i)] <- pm_dust_share_ave[dhs_loc$pm_cell+1][is.na(dhs_loc$dust_share_i)] #move one cell over
+            dhs_loc$dust_share_i[is.na(dhs_loc$dust_share_i)] <- pm_dust_share_ave[dhs_loc$pm_cell-(845)][is.na(dhs_loc$dust_share_i)] #move one cell down
             
     
         #identify Bodele depression dust
