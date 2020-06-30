@@ -5,8 +5,12 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
 ####################### spatial panel a ############
 
+#if script 13 was run, load that output, otherwise load pre-processed data included with replication materials
+if(file.exists("data/figure_data/figED2_dust_data_new.nc")){
+    dust <- brick("data/figure_data/figED2_dust_data_new.nc")}else{
+    dust <- brick("data/figure_data/figED2_dust_data.nc")}
 
-dust <- brick("data/figure_data/figED2_dust_data.nc")
+#define color pal  
 pal1 <- colorRampPalette(colors = add.alpha(c("#404096","#63AD99","#BEBC48","#E66B33","#D92120"), 0.5))
 
 
@@ -35,9 +39,16 @@ dev.off()
 
 
 ######### TEMPORAL FIGURE ############
+
+#define grid
 grid <- raster(dust[[1]])
 
-load("data/figure_data/figED2_panel_b_data.RData")
+#if script 13 was run then load data output, otherwise load pre-processed data included with replication materials
+if(file.exists("data/figure_data/figED2_panel_b_data.RData")){
+    load("data/figure_data/figED2_panel_b_data.RData")}else{
+    load("data/figure_data/figED2_panel_b_data.RData")}
+
+
 
 
 pdf("figures/raw/FigED2b_insert_raw.pdf",width = 6, height = 3.5)       

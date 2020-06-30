@@ -159,7 +159,7 @@ for(i in 1:length(cors)){
 
 save(cors, 
      bod_cells, nmy_cells, kno_cells, nrb_cells, bfs_cells, bmk_cells,dkr_cells,
-     file = "data/figure_data/figED2_panel_b_data.RData")
+     file = "data/figure_data/figED2_panel_b_data_new.RData")
 
 
 
@@ -190,7 +190,7 @@ dates <- dts[(start_pt):(start_pt+5),]
 names(dust_plot) <- paste(simpleCap(as.character(dates[,"month_name"]))," ",as.character(dates[,"dom"]),", ", as.character(dates[,"year"]), sep = "" )
 
 
-writeRaster(dust_plot, filename = "data/figure_data/figED2_dust_data.nc", format = "CDF", overwrite= T)
+writeRaster(dust_plot, filename = "data/figure_data/figED2_dust_data_new.nc", format = "CDF", overwrite= T)
 
 
 
