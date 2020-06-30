@@ -135,5 +135,5 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
 
 ################################# write out all of the data objects used to construct figure 1 #################################
-save(pm_dust_ave, pm_ave, pm_dust_share_ave, africa,bod_dat, file = "data/intermediate_outputs/fig1_data.RData") #replaces pre-processed data file    
+save(pm_dust_ave, pm_ave, pm_dust_share_ave, africa,bod_dat, file = "data/intermediate_outputs/fig1_data_new.RData") 
 ################################################################################################################################
