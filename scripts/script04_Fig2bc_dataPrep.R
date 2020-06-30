@@ -9,9 +9,8 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 # steps:
 #       (1) run B iterations randomly sampling (i) dust shares (ii) bodele dust months
 #       (2) for each iteration re-calculate dust instrument
-#       (3) estimate beta for simulated dust instrument and store
-#       (4) plot
-#       (5) repeat steps 1-4 with rainfall instrument
+#       (3) estimate beta in first stage regression with simulated dust instrument and store
+#       (4) repeat steps 1-3 with rainfall instrument
 #############################################################################################
 
 B <- 1000
