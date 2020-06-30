@@ -41,7 +41,7 @@ Script 02 generates figure 1
 
 Script 03 generates figure 2 panel a
 
-Script 04 processes data for figure 2 panels b and c (slow, >15 min if you run 1,000 iterations)
+Script 04 processes data for figure 2 panels b and c (slow, >30 min if you run 1,000 iterations)
 
 Script 05 generates figure 2 panels b and c 
 
@@ -49,7 +49,7 @@ Script 06 generates figure 3 panel a
 
 Script 07 generates figure 3 panel b
 
-Script 08 processes data for figure 4 (script 00 must be run first. slow, >15 min if you run 1,000 iterations)
+Script 08 processes data for figure 4 (script 00 must be run first. slow, >30 min if you run 1,000 iterations)
 
 Script 09 generates figure 4
 
