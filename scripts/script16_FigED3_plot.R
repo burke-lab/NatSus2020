@@ -8,7 +8,10 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 aerodata <- read_rds("data/inputs/aeronet/aeronet_calculation_2002_2016.rds") #volume aersol and dummy for whether "dust"
 
 #read in estimated dust shares
-dust_share <- brick("data/figure_data/figED3_dust_share.nc")
+
+    if(file.exists("data/figure_data/figED3_dust_share_new.nc")){
+      dust_share <- brick("data/figure_data/figED3_dust_share_new.nc")}else{
+      dust_share <- brick("data/figure_data/figED3_dust_share.nc")}
 
 #very imperfect estimation of share of aerosols from dust by counting volume weighted days thought to be dust and days thought to be nondust (see SI for details)
 shares <- aerodata %>% group_by(site, year, study_sample, lon, lat) %>% mutate(dust = dust*vol,nondust = nondust*vol) %>%  summarise(n_dust = sum(dust, na.rm = T), n_nondust = sum(nondust, na.rm = T)) %>% 

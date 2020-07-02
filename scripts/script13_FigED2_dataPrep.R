@@ -139,15 +139,15 @@ data_full$dkr <- get_series(dkr_cells)
 
 
 
-day_aves <- data_full  %>% group_by(doy) %>% dplyr::select(-harm, -season) %>%  summarise_at(vars(bod:lagos), mean, na.rm = T ) 
-day_sd <- data_full  %>% group_by(doy) %>% dplyr::select(-harm, -season) %>%  summarise_at(vars(bod:lagos), sd, na.rm = T )          
+day_aves <- data_full  %>% group_by(doy) %>% dplyr::select(-harm, -season) %>%  summarise_at(vars(bod:dkr), mean, na.rm = T ) 
+day_sd <- data_full  %>% group_by(doy) %>% dplyr::select(-harm, -season) %>%  summarise_at(vars(bod:dkr), sd, na.rm = T )          
 
 names(day_aves)[2:12]<-paste( names(day_aves)[2:12], "_ave", sep ="")
 names(day_sd)[2:12]<-paste( names(day_sd)[2:12], "_sd", sep ="")
 
 data_full2 <- left_join(data_full, day_aves, by = "doy") %>% left_join(day_sd, by = "doy")
 
-nms <- c("bod","bfs","nmy","bmk","nrb","dkr","djo","mtn","kms","lagos","kno")
+nms <- c("bod","bfs","nmy","bmk","nrb","dkr")
 
 data_full2[,paste(nms,"_z",sep="")]<- (data_full2[,nms] - data_full2[,paste(nms,"_ave",sep="")])/data_full2[,paste(nms,"_sd",sep="")]
 
@@ -158,7 +158,6 @@ for(i in 1:length(cors)){
   
   cors[[i]]<-get_cor(as.numeric(data_full2[,nms1[i]]))
 }
-
 
 save(cors, 
      bod_cells, nmy_cells, kno_cells, nrb_cells, bfs_cells, bmk_cells,dkr_cells,

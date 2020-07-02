@@ -49,5 +49,5 @@ source("scripts/loadPackages.R")
           pm_dust <- pm - pm.nodust
           dust_share <- pm_dust/pm
           
-          writeRaster(dust_share, filename = "data/figure_data/figED3_dust_share.nc", format = "CDF", overwrite= T)
+          writeRaster(dust_share, filename = "data/figure_data/figED3_dust_share_new.nc", format = "CDF", overwrite= T)
           
