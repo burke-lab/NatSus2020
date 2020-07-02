@@ -1,1 +1,1 @@
-Pre-processed data used in generating figures that draw on data not in the main data set.
+Pre-processed data used in generating figures that draw on data not in the main data set. *_dataPrep.R scripts will also write data files of the same name but ending with _new will also be written to this directory.
