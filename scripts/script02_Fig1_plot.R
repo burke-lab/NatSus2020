@@ -3,8 +3,8 @@ source("scripts/loadFunctions.R")
 
       ##### Load Data #####
       #if script 01 was run then load data output from there, otherwise load pre-processed data included with replication materials
-      if(file.exists("data/intermediate_outputs/fig1_data_new.RData")){load("data/intermediate_outputs/fig1_data_new.RData")}else{
-      load("data/intermediate_outputs/fig1_data.RData")} #pm average data for panels (a) and (b) [pm_ave and pm_dust_ave and pm_dust_share_ave and africa (shapefile) and dsa (plotting bodele)]
+      if(file.exists("data/figure_data/fig1_data_new.RData")){load("data/figure_data/fig1_data_new.RData")}else{
+      load("data/figure_data/fig1_data.RData")} #pm average data for panels (a) and (b) [pm_ave and pm_dust_ave and pm_dust_share_ave and africa (shapefile) and dsa (plotting bodele)]
       
       #load main analysis file
       data <- read_rds("data/inputs/analysis_data.rds")
