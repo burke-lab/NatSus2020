@@ -77,14 +77,14 @@ if(file.exists("data/figure_data/fig4_bootstrap_runs_new.RData")){
                     
                   
           #(a)
-                    hist(dist_rain, xlim = c(-15, 15),col = add.alpha('gray25', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = seq(-15,15,2),  axes=F, ylim = c(0, 0.21))
+                    hist(dist_rain, xlim = c(-15, 15),col = add.alpha('gray25', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = c(-100,seq(-15,15,2),100),  axes=F, ylim = c(0, 0.21))
                     axis(1, at = seq(-15, 15, 5),tick = T, cex.axis = 1.1)
                     axis(2, las = 2, cex.axis = 1.25, labels = seq(0, 40, 10), at= seq(0, 0.2, 0.2/4))
                     mtext(side = 2, text ="",line=3)
                     mtext(side = 1, text ="Change in seasonal rainfall total (mm)", cex=1.1,line=3.5)
 
           #(b)      
-                    hist(dist_pm, xlim = c(-15, 15), col = add.alpha('gray50', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = seq(-15,15,2),  axes=F)
+                    hist(dist_pm, xlim = c(-15, 15), col = add.alpha('gray50', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = c(-100,seq(-15,15,2),100),  axes=F)
                     axis(1, at = seq(-15, 15, 5),tick = T, cex.axis = 1.1)
                     axis(2, las = 2, cex.axis = 1.25, at = seq(0,0.2,0.2/3), labels = seq(0,30,10))
                     mtext(side = 2, text ="",line=3)
@@ -96,7 +96,7 @@ if(file.exists("data/figure_data/fig4_bootstrap_runs_new.RData")){
                     dist_imr[dist_imr < -0.025]<- 0.025; dist_imr[dist_imr>0.025]<-0.025
                     dd <- hist(dist_imr, plot = F)$density
                     
-                    hist(dist_imr*1000, xlim = c(-25, 25), col = add.alpha('gray75', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = seq(-25,25,5),  axes=F)
+                    hist(dist_imr*1000, xlim = c(-25, 25), col = add.alpha('gray75', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = c(100,seq(-25,25,5), 100),  axes=F)
                     axis(1, at = seq(-25, 25, 5),tick = T, cex.axis = 1.1)
                     axis(2, las = 2, cex.axis = 1.25, at = seq(0, 0.08, 0.0266666), labels = seq(0, 30,10))
                     mtext(side = 2, text ="",line=3)
