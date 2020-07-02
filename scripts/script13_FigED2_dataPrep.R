@@ -113,6 +113,9 @@ bod_vand$r_aod <- summary(lm(bod ~ child_birth_year, data = bod_vand))$residuals
 
 #this is a stupid way to do this but just manually found lat lon for cities and pull in time series for each here
 
+#note: get_series() ignores missing values from clouder cover and this generates a warning message because some periods all observations are missing
+
+
 bfs_cells <- get_cells(-2.416584, 13.579979 )
 data_full$bfs <- get_series(bfs_cells)
 
