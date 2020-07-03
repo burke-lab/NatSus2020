@@ -114,7 +114,7 @@ for(i in 1:B){
   beta_rain_timing[i] <-as.numeric(summary(mod_fs)$coefficients["instrument_rain_perm","Estimate"])
   
   #drop just to make 100% sure we're getting a new iteration every time
-  data <- data %>% dplyr::select(-dust_bod_perm)
+  data <- data %>% dplyr::select(-rain_bod_perm)
   
   
   #monitor progress
