@@ -41,8 +41,6 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
           pm[not.africa.cells]<-NA
           pm_dust[not.africa.cells]<-NA
           
-          save(pm, pm_dust, file = "data/intermediate_outputs/pm_brick_data.RData")#will replace pre-processed data
-
           
 ### [2] calculate share of total pm2.5 from dust ###          
         

@@ -4,14 +4,16 @@ source("scripts/loadFunctions.R")
       ##### Load Data #####
       #if script 01 was run then load data output from there, otherwise load pre-processed data included with replication materials
       if(file.exists("data/figure_data/fig1_data_new.RData")){load("data/figure_data/fig1_data_new.RData")}else{
-      load("data/figure_data/fig1_data.RData")} #pm average data for panels (a) and (b) [pm_ave and pm_dust_ave and pm_dust_share_ave and africa (shapefile) and dsa (plotting bodele)]
+      load("data/figure_data/fig1_data.RData")} #pm average data for panels (a) and (b) 
       
-      #load main analysis file
+      #load main analysis file for panels (c) and (d)
       data <- read_rds("data/inputs/analysis_data.rds")
-      #cell by time period data frame with pm2.5 and night lights (for cells in DHS locations)
+      
+      #cell by time data frame with pm2.5 and night lights for panel (e)
       nldf <- read_rds("data/inputs/nightLights/nl_pm25_cell_level_data.rds")
       
 
+  ### panels (a) and (b) ###
       pdf("figures/raw/Fig1_panels_a_b.pdf",width = 6, height = 3.5)    
       
       par(mfrow = c(1,2))
@@ -53,12 +55,11 @@ source("scripts/loadFunctions.R")
       
       
   
-      #get averages for each location
-      
+
      
       
       
-          
+## organize data for panels (c) - (e)          
       
       cb1 <- data %>% group_by(country, fe_cluster) %>% 
         summarise(co_bod = mean(dust_bod_post), co_rf =mean(rain_bod_post) ,pm =mean(pm25_post)) %>% 
@@ -97,7 +98,7 @@ source("scripts/loadFunctions.R")
        
 
   
-
+### plot panels (c) - (e) ###
       
       pdf("figures/raw/Fig1_panels_c_d_e_raw.pdf", width = 12, height = 4, useDingbats = F)
       

@@ -2,7 +2,7 @@ source("scripts/loadFunctions.R")
 source("scripts/loadPackages.R")
 
 
-  #[panel a]
+  ### plot panel a ###
 
     if(file.exists("data/figure_data/fig5_sampled_costs_new.rds")){
       costs <- read_rds("data/figure_data/fig5_sampled_costs_new.rds")
@@ -23,8 +23,9 @@ source("scripts/loadPackages.R")
 
 
   
-  #[panel b]  load uncertainties calculated in script 10 (or else pre-processed data) for panel b
-  
+  ### load data and do calculations for panel b ###  
+    
+       # load uncertainties calculated in script 10 (or else load pre-processed version included with replication materials)
       if(file.exists("data/figure_data/fig5_sampled_uncertainty_new.rds")){
         uncertainties <- read_rds("data/figure_data/fig5_sampled_uncertainty_new.rds")
         }else{uncertainties <- read_rds("data/figure_data/fig5_sampled_uncertainty.rds")}
@@ -46,17 +47,19 @@ source("scripts/loadPackages.R")
           res <- arrange(res, diff)
 
 
-
-pdf("figures/raw/Fig5b_raw.pdf", width = 12, height = 4)
-
-plot(rep(33,10),10:1, xlim = c(-300, 100),axes=F, xlab = "",ylab = "", pch = 16, col = NA)
-segments(x0 = seq(0,100,10), y0 = 0, y1 = 12, col = 'gray90', lwd = 0.75)
-rect(xleft = res$min, xright = res$max,ybottom = 1:10-.15, ytop = 1:10+.15, col = 'gray90', border = 'black')
-
-
-axis(1, tick = T, at = seq(0,100,20), cex.axis=.7)
-text(x = -150, y = 1:10,labels = as.character(res$par), cex = 0.75)
-segments(x0 = 23.5,y0 = 1, y1 = 11, col = add.alpha('red',0.5),lwd = 1)
-
-
-dev.off()
+          
+  ### plot panel b ###
+    
+    pdf("figures/raw/Fig5b_raw.pdf", width = 12, height = 4)
+        
+        plot(rep(33,10),10:1, xlim = c(-300, 100),axes=F, xlab = "",ylab = "", pch = 16, col = NA)
+        segments(x0 = seq(0,100,10), y0 = 0, y1 = 12, col = 'gray90', lwd = 0.75)
+        rect(xleft = res$min, xright = res$max,ybottom = 1:10-.15, ytop = 1:10+.15, col = 'gray90', border = 'black')
+        
+        
+        axis(1, tick = T, at = seq(0,100,20), cex.axis=.7)
+        text(x = -150, y = 1:10,labels = as.character(res$par), cex = 0.75)
+        segments(x0 = 23.5,y0 = 1, y1 = 11, col = add.alpha('red',0.5),lwd = 1)
+    
+    
+    dev.off()

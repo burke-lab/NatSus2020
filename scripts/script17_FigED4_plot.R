@@ -143,6 +143,7 @@ fs=list() #list for storing results from first stage models
 
       
       
+   ### plot fig 4 ###
       
       pdf(file="figures/raw/FigED4_raw.pdf",width=8,height=5,useDingbats = F)
             

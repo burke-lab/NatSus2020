@@ -2,19 +2,21 @@ source("scripts/loadFunctions.R")
 source("scripts/loadPackages.R")
 
 data <- read_rds("data/inputs/analysis_data.rds")
-################################################################################
 
-#this data frame has decadal average GCM rainfal by model for relevant periods & seasons
+#load data procssed to get decadal average GCM rainfal by model for relevant periods & seasons
 rain_projections <- read_rds("data/inputs/rainfall_projections/GCM_rainfall_projections.rds")
 
-##load stored bootstrap runs. 
+################################################################################
+
+  ##load stored bootstrap runs. 
   #If code from script 07 has been run to generate estimates those are used
   #otherwise pre-processed estimates are used. If new estimates are used figure may not look identical but should be similar regardless.
-if(file.exists("data/figure_data/fig4_bootstrap_runs_new.RData")){
-      load("data/figure_data/fig4_bootstrap_runs_new.RData")}else{
-      load("data/figure_data/fig4_bootstrap_runs.RData")          
-      }
-#loaded objects include: 
+  if(file.exists("data/figure_data/fig4_bootstrap_runs_new.RData")){
+        load("data/figure_data/fig4_bootstrap_runs_new.RData")}else{
+        load("data/figure_data/fig4_bootstrap_runs.RData")          
+        }
+
+  #loaded objects include: 
             # beta_imr: 1,000 sampled betas estimated in equation (2)     
             # beta_pm: 1,000 sampled coefficients from pm_loc ~ rainfall_bod + controls + FE described in methods
             
@@ -65,7 +67,7 @@ if(file.exists("data/figure_data/fig4_bootstrap_runs_new.RData")){
          
     
           
-  
+  ### plot fig 4 ###
           
           
           pdf(file = "figures/raw/Fig4_raw.pdf", width =4, height = 12)
@@ -76,7 +78,7 @@ if(file.exists("data/figure_data/fig4_bootstrap_runs_new.RData")){
                     par(mfrow =c (3,1))
                     
                   
-          #(a)
+          #panel (a)
                     dist_rain[dist_rain < -15]<- -15; dist_rain[dist_rain>15]<-15 #top and bottom code distribution
                     hist(dist_rain, xlim = c(-15, 15),col = add.alpha('gray25', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = seq(-15,15,2),  axes=F, ylim = c(0, 0.21))
                     axis(1, at = seq(-15, 15, 5),tick = T, cex.axis = 1.1)
@@ -84,7 +86,7 @@ if(file.exists("data/figure_data/fig4_bootstrap_runs_new.RData")){
                     mtext(side = 2, text ="",line=3)
                     mtext(side = 1, text ="Change in seasonal rainfall total (mm)", cex=1.1,line=3.5)
 
-          #(b)      
+          #panel (b)      
                     dist_pm[dist_pm < -15]<- -15; dist_pm[dist_pm>15]<-15 #top and bottom code distribution
                     hist(dist_pm, xlim = c(-15, 15), col = add.alpha('gray50', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = seq(-15,15,2),  axes=F)
                     axis(1, at = seq(-15, 15, 5),tick = T, cex.axis = 1.1)
@@ -94,7 +96,7 @@ if(file.exists("data/figure_data/fig4_bootstrap_runs_new.RData")){
                     
 
                     
-          #(c)      
+          #panel (c)      
                     dist_imr[dist_imr < -0.025]<- -0.025; dist_imr[dist_imr>0.025]<- 0.025 #top and bottom code distribution
                     hist(dist_imr*1000, xlim = c(-25, 25), col = add.alpha('gray75', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = seq(-25,25,5),  axes=F)
                     axis(1, at = seq(-25, 25, 5),tick = T, cex.axis = 1.1)

@@ -1,3 +1,6 @@
+source("scripts/loadPackages.R")
+source("scripts/loadFunctions.R")
+
 
 ## PM2.5 
 
@@ -54,14 +57,14 @@
                     svy_list <- read_csv("data/inputs/dhs/survey_list.csv")
             # [2]   register for access to all surveys here: https://dhsprogram.com/data/new-user-registration.cfm
             # [3]   Once access is approved, download raw data for all surveys here: https://dhsprogram.com/data/available-datasets.cfm
-            # [4]   using the individual recode (**IR***.dta) files, merge in gis data and reshape the data to have 1 row for each child (native format is 1 row for each mother)        
+            # [4]   using the individual recode (**IR***.dta) files, merge in gis data and reshape the data to have 1 row for each child (native format is 1 row for each individual in hh)        
             #       The sample used in this analysis can be reconstructed by including all births ocurring from 2000-2015 in the listed surveys and dropping children alive for less than 12 months at time of survey.
-            #       Any clarification questions on sample construction can be directed to Sam Heft-Neal (sheftneal@stanford.edu).
+            #       Any clarification questions on sample construction for replication (or general DHS data questions) can be directed to Sam Heft-Neal (sheftneal@stanford.edu).
                     
     # For the purpose of processing the above data to DHS locations we have included a list of all cluster locations from our sample, however, 
     # we do not provide any information that can be used to link the locations to the anonymized DHS data.
     
-    #Read in dhs locations:
+    # dhs locations:
                 dhs_loc <- read_csv("data/dhs/dhs_locations.csv")    
                     
                     
