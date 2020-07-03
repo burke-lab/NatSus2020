@@ -93,14 +93,14 @@ for(i in 1:B){
   
   beta_dust_share_rain[i] <-as.numeric(summary(mod_fs)$coefficients["instrument_rain_perm","Estimate"])
   
-  #drop just to make 100% sure we're getting a new iteration every time
+  #drop to make sure code fails if we're not generating a new instrument every iteration
   data <- data %>%  dplyr::select(-instrument_rain_perm)
   
   
   
-  #randomize bodele dust months   
-  #randomly re-sort order of bodele dust observations
-  data$dust_bod_perm <- data$rain_bod_post[order(runif(n = nrow(data)))]
+  #randomize bodele rainfall months   
+  #randomly re-sort order of bodele rain observations
+  data$rain_bod_perm <- data$rain_bod_post[order(runif(n = nrow(data)))]
   
   #re-construct the instrument with the new spatial and temporal components of our instrument
   data[,"instrument_rain_perm"] <-  data[,"rain_bod_perm"]*data[,"dust_share"]
