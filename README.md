@@ -1,7 +1,7 @@
 # Dust pollution from the Sahara and African infant mortality
 
 
-Replication materials for [_Heft-Neal, Burney, Bendavid, Voss & Burke (2020)_](https://www.nature.com/articles/s41893-020-0562-1) paper `Dust pollution from the Sahara and African infant mortality'.
+Replication materials for Heft-Neal, Burney, Bendavid, Voss & Burke (2020 paper [`Dust pollution from the Sahara and African infant mortality'](https://www.nature.com/articles/s41893-020-0562-1).
 
 The materials in this repository allow users to reproduce the figures and calculations appearing in the main text and extended data of the paper.
 
