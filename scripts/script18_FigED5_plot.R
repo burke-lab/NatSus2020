@@ -6,6 +6,7 @@ data_west <- filter(data, region==1)
 
 ### run models ###
 
+
     #(1)
     iv_fmla1 <- make_equation(
       controls <- "rain_post +rain_pre + tmp_pre + tmp_post ",

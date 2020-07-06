@@ -9,7 +9,6 @@ source("scripts/loadPackages.R")
   # estimate the impact of rainfall on pm2.5 in our locations as directly as possible.                   #
   
   
-  
   #now run 1000 boostraps estimating both
       #(1) main regression for west africa (ie effect of dust pm on imr)
       #(2) local pm2.5 ~ bodele rainfall annual cell level regression

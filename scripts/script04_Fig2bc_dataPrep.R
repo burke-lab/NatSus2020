@@ -67,7 +67,6 @@ for(i in 1:B){
 save(beta_dust_share, beta_dust_timing, file = "data/figure_data/fig2_permutation_test_coefs_dust_new.RData")
 
 
-
 #############################################################################################
 ### Now same thing for rainfall instrument
 #############################################################################################

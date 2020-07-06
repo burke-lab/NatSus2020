@@ -62,7 +62,6 @@ data_west <- filter(data, region==1)
       ci <-  paste(round(fs_results$coefficient,2)," (",round(fs_results$xleft,2), ",",round(fs_results$xright,2),")", sep= "")
         
       
-
   ### plot fig 2a ###  
    
        pdf(file="figures/raw/Fig2a_raw.pdf",width=7,height=3.5,useDingbats = F)

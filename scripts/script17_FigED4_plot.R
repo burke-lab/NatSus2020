@@ -13,6 +13,7 @@ fs=list() #list for storing results from first stage models
 
     ### Dust instruments ###
 
+
       #(model 1)
       fs_fmla1 <- make_equation(
             controls="instrument_dust + instrument_dust_lag  + rain_post +rain_pre + tmp_pre + tmp_post + child_female + child_birth_order + child_multi_birth + poly(mother_age_at_birth, 2, raw=T)  + hh_nightlights",

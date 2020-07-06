@@ -124,7 +124,6 @@ data_west <- filter(data, region==1)
 
               
               
-              
 ### plot fig 3a ###
       
       pdf(file="figures/raw/Fig3a_raw.pdf",width=7,height=4,useDingbats = F)

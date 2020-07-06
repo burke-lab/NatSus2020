@@ -94,7 +94,6 @@ dat <- read_csv("data/inputs/exotic_proposal_parameters/parameters.csv") %>% fil
     
       unct <- list() #store uncertainties for each parameter
     
-        
   # couldn't figure out how to easily automate loop over 10 different parameters since each parameter enters into calculations differently
   # so ended up doing this a stupid way where each parameter has it's own 1000 iteration loop coded separately. therefore below we have
   # 10 separate slightly different loops each estimating uncertainty around a single parameter

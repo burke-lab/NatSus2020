@@ -21,8 +21,6 @@ source("scripts/loadPackages.R")
       dev.off()
 
 
-
-  
   ### load data and do calculations for panel b ###  
     
        # load uncertainties calculated in script 10 (or else load pre-processed version included with replication materials)

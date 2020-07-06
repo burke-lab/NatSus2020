@@ -52,7 +52,6 @@ pal1 <- colorRampPalette(colors = add.alpha(c("#404096","#63AD99","#BEBC48","#E6
   
 
 ### plot panel b insert ###
-  
   pdf("figures/raw/FigED2b_insert_raw.pdf",width = 6, height = 3.5)       
       par(mar = c(0,0,0,0))
       

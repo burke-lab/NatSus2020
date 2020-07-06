@@ -1,1 +1,1 @@
-All scripts will be located in this directory
+All scripts will be located in this directory.

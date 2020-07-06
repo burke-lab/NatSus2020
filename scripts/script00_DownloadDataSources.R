@@ -3,7 +3,6 @@ source("scripts/loadFunctions.R")
 
 
 ## PM2.5 
-
         #Data download: http://fizz.phys.dal.ca/~atmos/martin/?page_id=140#V4.GL.02
         #Accompanying paper: https://pubs.acs.org/doi/abs/10.1021/acs.est.5b05833?journalCode=esthag  
 

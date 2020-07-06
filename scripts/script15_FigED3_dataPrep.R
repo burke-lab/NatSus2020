@@ -22,7 +22,6 @@ source("scripts/loadPackages.R")
       #africa shapefile
       africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
-    
       #read in van Donkelaar et al pm2.5 data
           ##### Bring in pm.nodust.5 data
           dat.files <- list.files("data/inputs/pm25/", pattern = "\\.nc$")	#get file names 

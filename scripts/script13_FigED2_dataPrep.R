@@ -192,7 +192,6 @@ dust_plot <- dust[[(start_pt):(start_pt+5)]]
 dates <- dts[(start_pt):(start_pt+5),]
 names(dust_plot) <- paste(simpleCap(as.character(dates[,"month_name"]))," ",as.character(dates[,"dom"]),", ", as.character(dates[,"year"]), sep = "" )
 
-
 writeRaster(dust_plot, filename = "data/figure_data/figED2_dust_data_new.nc", format = "CDF", overwrite= T)
 
 

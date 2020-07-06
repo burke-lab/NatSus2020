@@ -95,7 +95,6 @@ rain_projections <- read_rds("data/inputs/rainfall_projections/GCM_rainfall_proj
                     mtext(side = 1, text ="Change in annual PM2.5 (deaths per 1000)", cex=1.1,line=3.5)
                     
 
-                    
           #panel (c)      
                     dist_imr[dist_imr < -0.025]<- -0.025; dist_imr[dist_imr>0.025]<- 0.025 #top and bottom code distribution
                     hist(dist_imr*1000, xlim = c(-25, 25), col = add.alpha('gray75', 0.5), main = "",ylab = "", xlab="", freq=F, breaks = seq(-25,25,5),  axes=F)

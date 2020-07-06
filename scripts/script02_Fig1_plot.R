@@ -12,7 +12,6 @@ source("scripts/loadFunctions.R")
       #cell by time data frame with pm2.5 and night lights for panel (e)
       nldf <- read_rds("data/inputs/nightLights/nl_pm25_cell_level_data.rds")
       
-
   ### panels (a) and (b) ###
       pdf("figures/raw/Fig1_panels_a_b.pdf",width = 6, height = 3.5)    
       

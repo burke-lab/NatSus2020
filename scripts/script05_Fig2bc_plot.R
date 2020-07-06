@@ -8,7 +8,6 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
 #############################################################################################
 
-
 #load coefficients for plotting. If script 04 was run load that output. otherwise load pre-processed data. 
 if(file.exists("data/figure_data/fig2_permutation_test_coefs_dust_new.RData")){
   load("data/figure_data/fig2_permutation_test_coefs_dust_new.RData")

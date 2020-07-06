@@ -111,7 +111,6 @@ africa <- read_rds("data/inputs/spatial_boundaries/africa_borders.rds")
 
 
 
-    
       #pull data function
             get_dust_my <- function(row){
               month = row["child_birth_month"] %>% as.numeric()

@@ -58,7 +58,6 @@ aerodata <- read_rds("data/inputs/aeronet/aeronet_calculation_2002_2016.rds") #v
           par(mfrow = c(2,2))
           par(mar = c(5,5,3,1))
           
-          
           # panel a
           r2 <- summary(lm(share_dust_vd ~ share_dust_an, data = shares))$adj.r.squared
           plot(shares$share_dust_an, shares$share_dust_vd, pch = 16, xlim = c(0, 1), ylim = c(0,1 ), xlab = "", ylab = "", main = "", col =NA, axes=F)

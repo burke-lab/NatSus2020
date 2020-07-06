@@ -7,7 +7,7 @@ library(plotrix)
 library(R.utils)
 library(RANN)
 library(raster)
-library(sp)
 library(tidyverse)
+library(sp)
 
 

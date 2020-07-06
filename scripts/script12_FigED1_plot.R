@@ -52,7 +52,6 @@ source("scripts/loadPackages.R")
           points(dhsLatLon[,c("lon","lat")], col = col1, pch = 16, cex=0.2)
       dev.off()
   
-  
   ### plot panel b ###    
       pdf("figures/raw/FigED1b_raw.pdf",width = 5, height = 3)
           par(mar = c(5,5,2,2))
