@@ -1,1 +1,1 @@
-scripts will generate raw pdf versions of all figures in this directory. Cosmetic edits were subsequently done in Adobe Illustrator to produce the figures shown in the paper.
+scripts will generate raw pdf versions of all figures in this directory. Cosmetic edits were subsequently done in Adobe Illustrator to produce the figures shown in the paper
