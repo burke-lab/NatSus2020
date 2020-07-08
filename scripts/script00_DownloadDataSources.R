@@ -3,6 +3,20 @@ source("scripts/loadFunctions.R")
 
 
 ## PM2.5 
+
+#************************* NOTE about versions of PM2.5 data **********************************************************#
+#               After our paper was accepted a new version of the PM2.5 data set was released (V4.GL.03)
+#               new version data download: http://fizz.phys.dal.ca/~atmos/martin/?page_id=140#V4.GL.03
+#               new version accompanying paper: https://pubs.acs.org/doi/full/10.1021/acs.est.0c01764 
+#               Our results are qualitatively the same using the newest data release although estimates 
+#               differ from those presented in paper. See readme for details. 
+
+#               For replication purposes, the code below downloads the previous version of the data. Any applications aside from replication should
+#               instead use the newer version of the data linked above.
+#***********************************************************************************************************************#
+
+
+        # Data used in paper (previous release of PM2.5 data) --->
         #Data download: http://fizz.phys.dal.ca/~atmos/martin/?page_id=140#V4.GL.02
         #Accompanying paper: https://pubs.acs.org/doi/abs/10.1021/acs.est.5b05833?journalCode=esthag  
 
