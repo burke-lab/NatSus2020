@@ -21,7 +21,20 @@ The repository is ~360Mb (and >2Gb if you download all the raw data using script
 
 Users can manage replication through the R project "NatSus2020_replication.Rproj". Alternatively users can set working directory to NatSus2020 and run scripts independently.
 
-* A note about replication: Ideally we would like to provide replication materials for the entire pipeline beginning with the raw publicly available data and ending with the results presented in the paper. However, due to the [DHS data use agreement](https://dhsprogram.com/data/Terms-of-Use.cfm), we cannot post the individual level DHS data with location identifying information. Furthermore, our analysis combines data from 82 different surveys so it's not as simple as downloading a single file from the DHS website. We therefore have included the following materials to facilitate replication:
+* **A note about replication**: Ideally we would like to provide replication materials for the entire pipeline beginning with the raw publicly available data and ending with the results presented in the paper. However, due to the [DHS data use agreement](https://dhsprogram.com/data/Terms-of-Use.cfm), we cannot post the individual level DHS data with location identifying information. Furthermore, our analysis combines data from 82 different surveys so it's not as simple as downloading a single file from the DHS website. We therefore have included the following materials to facilitate replication:
+
+* **A note about version of the PM2.5 data set**: A few weeks before our paper was published a [new version](http://fizz.phys.dal.ca/~atmos/martin/?page_id=140#V4.GL.03) of the PM2.5 data set was released (V4.GL.03). In the paper we used the previous data release (V4.GL.02). Among several changes, the authors of the data were able to improve their handling of PM2.5 from dust in the new release and this led to substantial differences in the PM2.5 concentrations estimated across West and North Africa. In fact, on average the new version of the data estimates 20 ug/m3 lower pm2.5 concentrations than the previous version in West Africa (see Fig 1D in the [paper](https://pubs.acs.org/doi/full/10.1021/acs.est.0c01764) that accompanied the new data release). 20ug/m3 is a large difference, however, our analysis does not rely on the concentration levels themselves. Because we include location fixed effects (dummies) our estimates leverage variation in the deviations from long-run averages in each location and these deviations are much more stable across data releases than the concentration levels. That being said, when we re-run our anlysis with the new data release our estimates do change somewhat, although  all estimates remain within the confidence intervals presented in the paper and all are statistically different from zero:
+
+    Dust instrument with mother fixed effects SSA: 25.0% (95% CI: 13.7-36.2%) increase in infant mortality per 10ug/m3 
+
+    Dust instrument with cluster fixed effects SSA: 15.8% (6.1-25.7%)
+
+    Dust instrument with mother fixed effects West Africa: 20.2% (4.9-35.4%) 
+
+    Dust instrument with cluster fixed effects West Africa: 14.6% (2.8-26.4%)
+
+    In summary, while our analysis uses the previous data release, our results hold with the new data release (despite substantial differences in PM2.5 estimates over our study region). All replication materials utilize the previous data release. All applications aside from replication should utilize the newest version of the data.
+
 
 * **data/inputs/analysis_data.rds** This file includes the final processed data used in the analysis with all location identifying information removed. This file can be used to replicate the results in the paper but because identifying information has been removed, it cannot be used to replicate pre-processing since those steps require linking exposures to individual DHS observations based on location and timing of births.
 
